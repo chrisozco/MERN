@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Box = (props) =>{
-    const {boxColor} = props;
+const Box = ({boxColor}) =>{
+    // const {boxColor} = props;
 
     return(
         <div>

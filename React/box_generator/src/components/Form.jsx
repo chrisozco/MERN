@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
-const Form = (props) => {
-    const {boxColor, setBoxColor} = props
+const Form = ({boxColor, setBoxColor}) => {
+    // const {boxColor, setBoxColor} = props
     const [color, setColor] = useState('');
     
     const createBox = (e) => {
