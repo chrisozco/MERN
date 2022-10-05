@@ -6,10 +6,20 @@ module.exports.index = (req, res) =>{
     })
 }
 
+module.exports.getAllPeople = (req, res) => {
+    Person.find()
+        .then((allPeople) => {
+            res.json(allPeople)
+        })
+        .catch((err) => {
+            res.json({ message: 'Something went wrong', error: err })
+        })
+}
+
 module.exports.createPerson = (req, res) => {
     Person.create(req.body)
         .then(newPerson => {
-            res.json({ person: newPerson })
+            res.json(newPerson)
         })
         .catch((err) =>{
             res.json({message: 'Something went wrong', error: err})

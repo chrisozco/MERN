@@ -1,11 +1,17 @@
-import './App.css';
-import React from 'react';
-import PersonForm from './components/PersonForm';
+import './App.css'
+import React from 'react'
+import {BrowserRouter, Navigate, Routes, Route} from 'react-router-dom'
+import Main from './views/Main'
 
 function App() {
   return (
     <div className="App">
-      <PersonForm />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Navigate to='/home' replace/>} />
+          <Route element={<Main />} path='/home' />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
