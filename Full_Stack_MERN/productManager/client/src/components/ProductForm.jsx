@@ -24,17 +24,17 @@ const ProductForm = (props) => {
             <form onSubmit={formSubmit}>
                 <div>
                     <label className='form-label'>Title: </label>
-                    <input type="text"  className='form-control' value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input type="text" className='form-control' value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div>
                     <label className='form-label'>Price: </label>
-                    <input type="text"  className='form-control' value={price} onChange={(e) => setPrice(e.target.value)} />
+                    <input type="text" className='form-control' value={price} onChange={(e) => setPrice(e.target.value)} />
                 </div>
                 <div>
                     <label className='form-label'>Description: </label>
-                    <input type="text"  className='form-control' value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <input type="text" className='form-control' value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
-                <button className='btn btn-primary mt-4'>Add Product!</button>
+                <button className='btn btn-secondary text-white mt-4'>Add Product!</button>
             </form>
         </div>
     )
