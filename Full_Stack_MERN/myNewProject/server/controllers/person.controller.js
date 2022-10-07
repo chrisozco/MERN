@@ -1,10 +1,5 @@
 const Person = require('../models/person.model')
 
-module.exports.index = (req, res) =>{
-    res.json({
-        message:'Hello World'
-    })
-}
 
 module.exports.getAllPeople = (req, res) => {
     Person.find()
@@ -33,5 +28,29 @@ module.exports.onePerson = (req, res) => {
         })
         .catch((err) => {
             res.json({message: 'Something went wrong', error: err})
+        })
+}
+
+module.exports.updatePerson = (req, res) => {
+    Person.findOneAndUpdate(
+        {_id: req.params.id},
+        req.body,
+        {new: true, runValidators: true}
+    )
+        .then(updatedPerson =>{
+            res.json(updatedPerson)
+        })
+        .catch((err) => {
+            res.json({ message: 'Something went wrong', error: err })
+        })
+}
+
+module.exports.deletePerson = (req, res) => {
+    Person.findByIdAndDelete(req.params.id)
+        .then(deletedPerson => {
+            res.json(deletedPerson)
+        })
+        .catch((err) =>{
+            res.json({ message: 'Something went wrong', error: err })
         })
 }
